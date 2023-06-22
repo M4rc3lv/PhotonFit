@@ -1,0 +1,359 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L bikkel:VL53L0X U?
+U 1 1 648002C5
+P 8850 3100
+F 0 "U?" H 8850 2513 60  0001 C CNN
+F 1 "VL53L0X" H 8850 2900 60  0000 C CNN
+F 2 "" H 8900 3050 60  0000 C CNN
+F 3 "" H 8900 3050 60  0000 C CNN
+	1    8850 3100
+	1    0    0    1   
+$EndComp
+$Comp
+L bikkel:VL53L0X U?
+U 1 1 64802189
+P 6550 4850
+F 0 "U?" H 6550 4263 60  0001 C CNN
+F 1 "VL53L0X" H 6550 4600 60  0000 C CNN
+F 2 "" H 6600 4800 60  0000 C CNN
+F 3 "" H 6600 4800 60  0000 C CNN
+	1    6550 4850
+	-1   0    0    1   
+$EndComp
+$Comp
+L sensors:Arduino_Leonardo A?
+U 1 1 648038E7
+P 3100 3200
+F 0 "A?" H 3100 4381 50  0001 C CNN
+F 1 "Leonardo" H 3100 3100 50  0000 C CNN
+F 2 "Module:Arduino_UNO_R3" H 3100 3200 50  0001 C CIN
+F 3 "https://www.arduino.cc/en/Main/ArduinoBoardLeonardo" H 3100 3200 50  0001 C CNN
+	1    3100 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Interface_Expansion:TCA9548APWR U?
+U 1 1 647FF7E8
+P 4650 3250
+F 0 "U?" H 4650 4331 50  0001 C CNN
+F 1 "TCA9548A" V 4650 3000 50  0000 C CNN
+F 2 "Package_SO:TSSOP-24_4.4x7.8mm_P0.65mm" H 4650 2250 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tca9548a.pdf" H 4700 3500 50  0001 C CNN
+	1    4650 3250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3600 3900 3900 3900
+Wire Wire Line
+	3900 3900 3900 2650
+Wire Wire Line
+	3900 2650 4250 2650
+Wire Wire Line
+	4250 2550 4000 2550
+Wire Wire Line
+	4000 2550 4000 4000
+Wire Wire Line
+	4000 4000 3600 4000
+$Comp
+L Connector:DIN-5_180degree Right
+U 1 1 6480D628
+P 6500 3250
+F 0 "Right" H 6700 3500 50  0000 C CNN
+F 1 "Soldering side" H 6800 3000 39  0000 C CNN
+F 2 "" H 6500 3250 50  0001 C CNN
+F 3 "http://www.mouser.com/ds/2/18/40_c091_abd_e-75918.pdf" H 6500 3250 50  0001 C CNN
+	1    6500 3250
+	1    0    0    1   
+$EndComp
+$Comp
+L Connector:DIN-5_180degree J?
+U 1 1 6480DABD
+P 9950 3100
+F 0 "J?" H 9950 2733 50  0001 C CNN
+F 1 "Soldering side" H 9950 2825 50  0000 C CNN
+F 2 "" H 9950 3100 50  0001 C CNN
+F 3 "http://www.mouser.com/ds/2/18/40_c091_abd_e-75918.pdf" H 9950 3100 50  0001 C CNN
+	1    9950 3100
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	6200 3250 6050 3250
+Wire Wire Line
+	6050 3250 6050 2750
+Wire Wire Line
+	6200 3350 5950 3350
+Wire Wire Line
+	5950 3350 5950 2850
+Wire Wire Line
+	6200 3950 5850 3950
+Wire Wire Line
+	5850 3950 5850 2950
+Wire Wire Line
+	5050 2950 5850 2950
+Wire Wire Line
+	6200 4050 5750 4050
+Wire Wire Line
+	5750 4050 5750 3050
+Wire Wire Line
+	5750 3050 5050 3050
+Wire Wire Line
+	5050 2850 5950 2850
+Wire Wire Line
+	5050 2750 6050 2750
+Wire Wire Line
+	5050 2650 6200 2650
+Wire Wire Line
+	5050 2550 6200 2550
+Wire Wire Line
+	5950 4850 5650 4850
+Wire Wire Line
+	5650 4850 5650 3150
+Wire Wire Line
+	5650 3150 5050 3150
+Wire Wire Line
+	5950 4950 5550 4950
+Wire Wire Line
+	5550 4950 5550 3250
+Wire Wire Line
+	5550 3250 5050 3250
+Wire Wire Line
+	9450 3100 9650 3100
+Wire Wire Line
+	9450 3200 9650 3200
+Wire Wire Line
+	10250 3100 10550 3100
+Wire Wire Line
+	10550 3100 10550 3800
+Wire Wire Line
+	10550 3800 8250 3800
+Wire Wire Line
+	8250 3800 8250 3500
+$Comp
+L power:GNDD #PWR?
+U 1 1 6483A947
+P 9950 3500
+F 0 "#PWR?" H 9950 3250 50  0001 C CNN
+F 1 "GNDD" H 9954 3345 50  0001 C CNN
+F 2 "" H 9950 3500 50  0001 C CNN
+F 3 "" H 9950 3500 50  0001 C CNN
+	1    9950 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR?
+U 1 1 6483AE31
+P 8250 3250
+F 0 "#PWR?" H 8250 3000 50  0001 C CNN
+F 1 "GNDD" H 8254 3095 50  0001 C CNN
+F 2 "" H 8250 3250 50  0001 C CNN
+F 3 "" H 8250 3250 50  0001 C CNN
+	1    8250 3250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8250 3200 8250 3250
+Wire Wire Line
+	9950 3400 9950 3500
+Wire Wire Line
+	3300 2200 3300 2000
+Wire Wire Line
+	3300 2000 4650 2000
+Wire Wire Line
+	6800 3250 7150 3250
+Connection ~ 7150 3250
+Wire Wire Line
+	7150 3250 7150 3950
+Wire Wire Line
+	6800 2550 7150 2550
+Wire Wire Line
+	7150 2000 7150 2550
+Connection ~ 7150 2550
+Wire Wire Line
+	7150 2550 7150 3250
+Wire Wire Line
+	4650 2350 4650 2000
+Connection ~ 4650 2000
+Wire Wire Line
+	4650 2000 7150 2000
+Wire Wire Line
+	7150 5250 7550 5250
+Wire Wire Line
+	7550 5250 7550 3950
+Wire Wire Line
+	6800 3950 7150 3950
+Connection ~ 7150 3950
+Wire Wire Line
+	7150 3950 7550 3950
+$Comp
+L power:GNDD #PWR?
+U 1 1 64840F28
+P 7150 4950
+F 0 "#PWR?" H 7150 4700 50  0001 C CNN
+F 1 "GNDD" H 7154 4795 50  0001 C CNN
+F 2 "" H 7150 4950 50  0001 C CNN
+F 3 "" H 7150 4950 50  0001 C CNN
+	1    7150 4950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR?
+U 1 1 64841B8E
+P 4650 4250
+F 0 "#PWR?" H 4650 4000 50  0001 C CNN
+F 1 "GNDD" H 4654 4095 50  0001 C CNN
+F 2 "" H 4650 4250 50  0001 C CNN
+F 3 "" H 4650 4250 50  0001 C CNN
+	1    4650 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR?
+U 1 1 64841F2A
+P 3200 4300
+F 0 "#PWR?" H 3200 4050 50  0001 C CNN
+F 1 "GNDD" H 3204 4145 50  0001 C CNN
+F 2 "" H 3200 4300 50  0001 C CNN
+F 3 "" H 3200 4300 50  0001 C CNN
+	1    3200 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L bikkel:LED D?
+U 1 1 64842689
+P 2250 3400
+F 0 "D?" V 2289 3283 50  0001 R CNN
+F 1 "Red" V 2243 3283 50  0000 R CNN
+F 2 "" H 2250 3400 50  0001 C CNN
+F 3 "~" H 2250 3400 50  0001 C CNN
+	1    2250 3400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L bikkel:R2 R?
+U 1 1 64845E09
+P 2250 3850
+F 0 "R?" H 2325 3896 50  0001 L CNN
+F 1 "330" H 2325 3850 50  0000 L CNN
+F 2 "" V 2180 3850 50  0001 C CNN
+F 3 "~" H 2250 3850 50  0001 C CNN
+	1    2250 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR?
+U 1 1 64846184
+P 2250 4100
+F 0 "#PWR?" H 2250 3850 50  0001 C CNN
+F 1 "GNDD" H 2254 3945 50  0001 C CNN
+F 2 "" H 2250 4100 50  0001 C CNN
+F 3 "" H 2250 4100 50  0001 C CNN
+	1    2250 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2250 4000 2250 4100
+Wire Wire Line
+	2250 3700 2250 3550
+$Comp
+L bikkel:Push_Button SW?
+U 1 1 6484C1BA
+P 2050 3000
+F 0 "SW?" H 2050 3292 50  0001 C CNN
+F 1 "On" H 2050 3201 50  0000 C CNN
+F 2 "" H 2050 3200 50  0001 C CNN
+F 3 "~" H 2050 3200 50  0001 C CNN
+	1    2050 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR?
+U 1 1 6484C9EB
+P 1750 3100
+F 0 "#PWR?" H 1750 2850 50  0001 C CNN
+F 1 "GNDD" H 1754 2945 50  0001 C CNN
+F 2 "" H 1750 3100 50  0001 C CNN
+F 3 "" H 1750 3100 50  0001 C CNN
+	1    1750 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1850 3000 1750 3000
+Wire Wire Line
+	1750 3000 1750 3100
+$Comp
+L Connector:DIN-5_180degree Top
+U 1 1 6480BD3B
+P 6500 3950
+F 0 "Top" H 6700 4200 50  0000 C CNN
+F 1 "Soldering side" H 6150 3750 39  0000 C CNN
+F 2 "" H 6500 3950 50  0001 C CNN
+F 3 "http://www.mouser.com/ds/2/18/40_c091_abd_e-75918.pdf" H 6500 3950 50  0001 C CNN
+	1    6500 3950
+	1    0    0    1   
+$EndComp
+$Comp
+L power:GNDD #PWR?
+U 1 1 64850131
+P 6500 4250
+F 0 "#PWR?" H 6500 4000 50  0001 C CNN
+F 1 "GNDD" H 6504 4095 50  0001 C CNN
+F 2 "" H 6500 4250 50  0001 C CNN
+F 3 "" H 6500 4250 50  0001 C CNN
+	1    6500 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR?
+U 1 1 6485051D
+P 6500 3550
+F 0 "#PWR?" H 6500 3300 50  0001 C CNN
+F 1 "GNDD" H 6504 3395 50  0001 C CNN
+F 2 "" H 6500 3550 50  0001 C CNN
+F 3 "" H 6500 3550 50  0001 C CNN
+	1    6500 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR?
+U 1 1 64850981
+P 6500 2850
+F 0 "#PWR?" H 6500 2600 50  0001 C CNN
+F 1 "GNDD" H 6504 2695 50  0001 C CNN
+F 2 "" H 6500 2850 50  0001 C CNN
+F 3 "" H 6500 2850 50  0001 C CNN
+	1    6500 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:DIN-5_180degree Left
+U 1 1 6480CBF1
+P 6500 2550
+F 0 "Left" H 6700 2750 50  0000 C CNN
+F 1 "Soldering side" H 6500 2275 39  0000 C CNN
+F 2 "" H 6500 2550 50  0001 C CNN
+F 3 "http://www.mouser.com/ds/2/18/40_c091_abd_e-75918.pdf" H 6500 2550 50  0001 C CNN
+	1    6500 2550
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	2250 3000 2600 3000
+Wire Wire Line
+	2600 3100 2250 3100
+Wire Wire Line
+	2250 3100 2250 3250
+$EndSCHEMATC
