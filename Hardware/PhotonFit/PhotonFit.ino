@@ -37,6 +37,7 @@ void setup() {
 }
 
 bool bIsOn=false;
+bool bShiftDown=false,bCtrlDown=false,bAltDown=false,bLeftDown=false,bRightDown=false;
 void loop() { 
  if(digitalRead(PUSH_BTN)==LOW) {
   bIsOn=!bIsOn;
@@ -46,35 +47,48 @@ void loop() {
  if(!bIsOn) {
   digitalWrite(LED_ON,LOW);
   Keyboard.releaseAll(); // Important!
+  bShiftDown=bCtrlDown=bAltDown=bLeftDown=bRightDown=false;
   return;
  }
  digitalWrite(LED_ON,HIGH);
-
- bool bKeyPress=false,bShiftDown=false;
+ 
  for(int i=0; i<4; i++) {
   SelectVLXSensor(i);  
   int cm=VLX.readRangeSingleMillimeters()/10;     
-  if(cm<MAX_DIST) {      
-   Keyboard.press(i==MIDDLE?KEY_LEFT_CTRL: 
-    i==RIGHT? KEY_RIGHT_ARROW :
-    i==LEFT? KEY_LEFT_ARROW : KEY_LEFT_ALT);
-   bKeyPress=true;
-   
-   if(i==MIDDLE && cm<BOX_DIST) {
-    // Bump
-    Keyboard.press(KEY_LEFT_SHIFT);
-    bShiftDown=true;
+  if(cm<MAX_DIST) {     
+   if(i==MIDDLE) {
+    if(!bCtrlDown)Keyboard.press(KEY_LEFT_CTRL);
+    bCtrlDown=true;
+    if(cm<BOX_DIST && !bShiftDown) {
+     // Punch
+     Keyboard.press(KEY_LEFT_SHIFT);
+     bShiftDown=true;
+    }
    }
+   else if(i==RIGHT && !bRightDown) {
+    Keyboard.press(KEY_RIGHT_ARROW);
+    bRightDown=true;
+   }
+   else if(i==LEFT && !bLeftDown) {
+    Keyboard.press(KEY_LEFT_ARROW);
+    bLeftDown=true;
+   }
+   else if(i==TOP && !bAltDown) {
+    Keyboard.press(KEY_LEFT_ALT);
+    bAltDown=true;
+   }     
+   delay(40);   
   }
-  else
-   Keyboard.release(i==MIDDLE?KEY_LEFT_CTRL: 
-    i==RIGHT? KEY_RIGHT_ARROW :
-    i==LEFT? KEY_LEFT_ARROW : KEY_LEFT_ALT);
- 
-  if(i==MIDDLE && cm>=BOX_DIST && bShiftDown) {
-   Keyboard.release(KEY_LEFT_SHIFT);
-   bShiftDown=false;
+  else {
+   if(i==MIDDLE && bCtrlDown) {Keyboard.release(KEY_LEFT_CTRL);bCtrlDown=false;}
+   if(i==MIDDLE && bShiftDown) {Keyboard.release(KEY_LEFT_SHIFT);bShiftDown=false;}
+   else if(i==RIGHT && bRightDown) {Keyboard.release(KEY_RIGHT_ARROW);bRightDown=false;}
+   else if(i==LEFT && bLeftDown) {Keyboard.release(KEY_LEFT_ARROW);bLeftDown=false;}
+   else if(i==TOP && bAltDown) {Keyboard.release(KEY_LEFT_ALT);bAltDown=false;}
   }
+
+  if(i==MIDDLE && cm>=BOX_DIST && bShiftDown){Keyboard.release(KEY_LEFT_SHIFT);bShiftDown=false;}
+   
   
   /*Serial.print("Sensor ");
   Serial.print(i==0? "Link" : i==1? "Rechts" : i==2?"Top": "Buik/midden" );
@@ -85,10 +99,10 @@ void loop() {
  
  }   
 
- if(bKeyPress) {
-  delay(40);
+ //if(bKeyPress) {
+//  delay(40);
   //Keyboard.releaseAll();
- } 
+ //} 
  
 }
 
